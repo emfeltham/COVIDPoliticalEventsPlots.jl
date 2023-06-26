@@ -149,6 +149,7 @@ function figure3(
             xticks = xt,
             yticklabelcolor = outcomecolors[2],
             yaxisposition = :right,
+            ylabel = ylabels[2],
             title = labels[s]
         );
 
@@ -161,7 +162,8 @@ function figure3(
             # ylabel = ylabel,
             xticks = xt,
             xminorticks = IntervalsBetween(intr),
-            yticklabelcolor = outcomecolors[1]
+            yticklabelcolor = outcomecolors[1],
+            ylabel = ylabels[1],
         );
 
         rb_d = rangebars!(
@@ -291,7 +293,7 @@ function figure4(
     xt = collect(fmin:intr:fmax);
 
     axm2 = Axis(
-        panelA[1,1],
+        panelA[1, 1],
         ylabel = ylabels[2],
         xticks = xt,
         yticklabelcolor = outcomecolors[2],
@@ -302,7 +304,7 @@ function figure4(
     hidexdecorations!(axm2)
 
     axm1 = Axis(
-        panelA[1,1];
+        panelA[1, 1];
         xlabel = xlabel,
         ylabel = ylabels[1],
         xticks = xt,
@@ -369,10 +371,12 @@ function figure4(
     intr = 5
     xt = collect(fmin:intr:fmax);
 
+    # cases
     axm2 = Axis(
-        panelB[1,1],
-        # ylabel = ylabels[2],
+        panelB[1, 1];
         xticks = xt,
+        xlabel = xlabel,
+        ylabel = ylabels[2],
         yticklabelcolor = outcomecolors[2],
         yaxisposition = :right
     );
@@ -380,10 +384,10 @@ function figure4(
     hidespines!(axm2)
     hidexdecorations!(axm2)
 
+    # deaths
     axm1 = Axis(
-        panelB[1,1];
-        xlabel = xlabel,
-        # ylabel = ylabels[1],
+        panelB[1, 1];
+        ylabel = ylabels[1],
         xticks = xt,
         xminorticks = IntervalsBetween(intr),
         yticklabelcolor = outcomecolors[1]
@@ -610,7 +614,7 @@ function figure6(
 
         axi_c = Axis(
             f_i,
-            # ylabel = "Case rate (per 10,000 persons)",
+            ylabel = ylabels[2],
             xticks = xt,
             yticklabelcolor = outcomecolors[2],
             yaxisposition = :right,
@@ -623,7 +627,7 @@ function figure6(
         axi_d = Axis(
             f_i;
             xlabel = xlabel,
-            # ylabel = ylabel,
+            ylabel = ylabels[1],
             xticks = xt,
             xminorticks = IntervalsBetween(intr),
             yticklabelcolor = outcomecolors[1]
@@ -847,9 +851,9 @@ function figure5(
 
         axi_c = Axis(
             f_i,
-            # ylabel = "Case rate (per 10,000 persons)",
             xticks = xt,
             yticklabelcolor = outcomecolors[2],
+            ylabel = ylabels[2],
             yaxisposition = :right,
             title = labels[s]
         );
@@ -860,9 +864,9 @@ function figure5(
         axi_d = Axis(
             f_i;
             xlabel = xlabel,
-            # ylabel = ylabel,
             xticks = xt,
             xminorticks = IntervalsBetween(intr),
+            ylabel = ylabels[1],
             yticklabelcolor = outcomecolors[1]
         );
 

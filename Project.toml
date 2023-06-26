@@ -1,0 +1,4 @@
+name = "COVIDPoliticalEventsPlots"
+uuid = "b0168669-34dd-4e15-b7f9-3688a0870df3"
+authors = ["Eric Martin Feltham <eric.feltham@yale.edu>"]
+version = "0.1.0"

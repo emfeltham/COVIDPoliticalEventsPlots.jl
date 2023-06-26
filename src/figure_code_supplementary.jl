@@ -2496,7 +2496,7 @@ function treatmentplot(dat, gadatafile, protestdatafile)
             "Event"
         )
 
-    for (label, layout) in zip(["a", "b", "b"], [ga, gx, gb])
+    for (label, layout) in zip(["a", "b", "c"], [ga, gx, gb])
         Label(layout[1, 1, TopLeft()], label,
             fontsize = 26,
             # font = :bold,

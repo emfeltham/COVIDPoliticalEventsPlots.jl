@@ -5,11 +5,12 @@ using Parameters, Accessors
 import TSCSMethods:ModelRecord
 import CSV, HTTP
 import TSCSMethods:mean,std
-using ShiftedArrays # import ShiftedArrays:lead
-import Indicators:sma
 import FileIO.load
 import Downloads:download
 import CategoricalArrays:categorical
+
+# using ShiftedArrays # import ShiftedArrays:lead
+# import Indicators:sma
 
 using COVIDPoliticalEvents
 

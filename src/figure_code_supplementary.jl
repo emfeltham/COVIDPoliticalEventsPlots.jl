@@ -249,6 +249,7 @@ function modelfigure(X, scenario)
         f = _modelfigure_strat([X.model, X.refinedmodel])
         fc = _modelfigure_strat([X.calmodel, X.refcalmodel])
         
+        # regular refined, caliper refined
         return [f, fc]
     end
 end
@@ -262,47 +263,6 @@ function diagnostic(e; simple = false)
         modelfigure(X, scenario)
     else
         modelfigure_simple(X; stratum = 1)
-    end
-end
-
-function modelfigure(X, scenario)
-
-    vn = VariableNames()
-
-    stratifier = X.model.stratifier;
-
-    if stratifier == Symbol("")
-        f = _modelfigure_nostrat(
-            [X.model, X.refinedmodel, X.calmodel, X.refcalmodel]
-        )
-
-        return f
-    else
-
-        treatment = if occursin("ga", scenario)
-            :gaspec
-        elseif occursin("primary", scenario)
-            :primary
-        elseif occursin("protest", scenario)
-            :protest
-        elseif occursin("rally", scenario)
-            :rallydayunion
-        elseif occursin("gub", scenario)
-        end
-
-        if (treatment == :gaspec) & (stratifier == vn.tout)
-            stratifier = :gaout
-        end
-
-        if stratifier == Symbol("Date of First Case to Primary")
-            stratifier = Symbol("Date of First Case")
-        end
-
-        f = _modelfigure_strat([X.model, X.refinedmodel])
-        fc = _modelfigure_strat([X.calmodel, X.refcalmodel])
-        
-        # regular refined, caliper refined
-        return [f, fc]
     end
 end
 

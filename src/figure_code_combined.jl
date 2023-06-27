@@ -106,34 +106,6 @@ function get_ylims(lwr::Tuple, upr::Tuple)
     return md, mc
 end
 
-function colorvariables()
-
-    vn = VariableNames();
-    pal = gen_colors(15);
-
-    variablecolors = Dict(
-        vn.cdr => pal[3],
-        vn.ccr => pal[2],
-        vn.deathoutcome => pal[3],
-        vn.caseoutcome => pal[2],
-        vn.fc => pal[11],
-        vn.pd => pal[4],
-        vn.res => pal[5],
-        vn.groc => pal[7],
-        vn.rec => pal[1],
-        vn.pbl => pal[12],
-        vn.phi => pal[8],
-        vn.ts16 => pal[9],
-        vn.mil => pal[10],
-        vn.p65 => pal[6],
-        vn.rare => pal[13],
-        vn.rt => pal[15],
-        :deaths => pal[3],
-        :cases => pal[2]
-    );
-    return variablecolors
-end
-
 function add_att_axis!(panel, dth, cse, xlabel, ylabels, outcomecolors, offsets)
 
     fmin, fmax, fs, atts, lwr, upr = extract(dth, cse);

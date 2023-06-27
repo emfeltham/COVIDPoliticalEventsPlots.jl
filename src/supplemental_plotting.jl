@@ -361,7 +361,7 @@ function primary_mob_pl(;
   vc = Symbol("Visits Per Capita");
 
   primdat = @chain primdat begin
-    stack(
+    DataFrames.stack(
       Not([:Day, vn.id, :State]),
       variable_name = :Place,
       value_name = vc
@@ -512,7 +512,7 @@ function ga_mob_pl(
   vcstd = Symbol("Visits Per Capita (std)");
 
   gadat = @chain gadat begin
-    stack(
+    DataFrames.stack(
       Not([:Day, vn.id]),
       variable_name = :Place,
       value_name = vc
@@ -659,7 +659,7 @@ function rally_mob_pl(;
         [vn.t, :rallydayunion, :rallyday0, :rallyday1, :rallyday2, :rallyday3]
       )
     )
-    stack(Not([:fips, :Day, nds]), value_name = vc, variable_name = :Place)
+    DataFrames.stack(Not([:fips, :Day, nds]), value_name = vc, variable_name = :Place)
     groupby([nds, :Day, :Place])
     @combine($vc = mean($vc))
   end
@@ -777,7 +777,7 @@ function protest_mob_pl(;
 
   pdat = @chain pdat begin
     select(Not([vn.t, vn.id, :protest, :eventnum, :date]))
-    stack(Not(:Day), value_name = vc, variable_name = :Place)
+    DataFrames.stack(Not(:Day), value_name = vc, variable_name = :Place)
     groupby([:Day, :Place])
     @combine(
       $vc = mean($vc .* popfactor),

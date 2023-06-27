@@ -16,7 +16,7 @@ using COVIDPoliticalEvents
 
 using CairoMakie
 using Colors, ColorSchemes
-import CairoMakie.RGB
+import CairoMakie:RGB
 import JLD2:load_object
 
 depfiles = [
@@ -39,5 +39,6 @@ export
     # supplementary figures
     testingfig, rescheduled_pl, diagnostic, turnoutplot, covrob_plot,
     rally_ts_x_exposure_fig
-
+    # reexport CairoMakie
+    save
 end # module COVIDPoliticalEventsPlots

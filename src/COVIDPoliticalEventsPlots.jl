@@ -40,5 +40,5 @@ export
     testingfig, rescheduled_pl, diagnostic, turnoutplot, covrob_plot,
     rally_ts_x_exposure_fig
     # reexport CairoMakie
-    save
+    CairoMakie.save
 end # module COVIDPoliticalEventsPlots

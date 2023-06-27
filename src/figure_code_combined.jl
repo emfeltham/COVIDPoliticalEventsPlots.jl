@@ -92,20 +92,6 @@ function extract(
     return fmin, fmax, (fs_d, fs_c), (atts_d, atts_c), (lwr_d, lwr_c), (upr_d, upr_c)
 end
 
-function get_ylims(lwr::Tuple, upr::Tuple)
-
-    exd = minimum(lwr[1]), maximum(upr[1])
-    exc = minimum(lwr[2]), maximum(upr[2])
-
-    md = maximum(abs.(exd))
-    md = md + md * inv(10)
-    # md = exd[findfirst(abs.(exd) .== md)]
-    mc = maximum(abs.(exc))
-    mc = mc + mc * inv(10)
-    # mc = exd[findfirst(abs.(exc) .== mc)]
-    return md, mc
-end
-
 function add_att_axis!(panel, dth, cse, xlabel, ylabels, outcomecolors, offsets)
 
     fmin, fmax, fs, atts, lwr, upr = extract(dth, cse);

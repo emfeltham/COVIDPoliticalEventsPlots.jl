@@ -232,7 +232,7 @@ function figure3(
     rowgap!(f.layout, 5)
     colgap!(panelB, 5)
 
-    save(
+    CairoMakie.save(
         savepth * "Figure 3" * format,
         f,
         pt_per_unit = 1
@@ -457,7 +457,7 @@ function figure4(
     rowgap!(f.layout, 5)
     colgap!(panelB, 5)
 
-    save(
+    CairoMakie.save(
         savepth * "Figure 4" * format,
         f,
         pt_per_unit = 1
@@ -696,7 +696,7 @@ function figure6(
     rowgap!(f.layout, 5)
     colgap!(panelB, 5)
 
-    save(
+    CairoMakie.save(
         savepth * "Figure 6" * format,
         f,
         pt_per_unit = 1
@@ -935,7 +935,7 @@ function figure5(
     rowgap!(f.layout, 5)
     colgap!(panelB, 5)
 
-    save(
+    CairoMakie.save(
         savepth * "Figure 5" * format,
         f,
         pt_per_unit = 1
@@ -1210,7 +1210,7 @@ function figure7(;
     colgap!(panelB, 5)
 
     if !isnothing(savepath)
-        save(savepath * "Figure 7" * format, f, pt_per_unit = 1)
+        CairoMakie.save(savepath * "Figure 7" * format, f, pt_per_unit = 1)
     end
 
     ms2 = Vector{DataFrame}(undef, length(ms));
@@ -1343,7 +1343,7 @@ function figure8(;
     rowgap!(f.layout, 5)
 
     if !isnothing(savepath)
-        save(savepath * "Figure 8" * format, f, pt_per_unit = 1)
+        CairoMakie.save(savepath * "Figure 8" * format, f, pt_per_unit = 1)
     end
 
     counts = DataFrame();

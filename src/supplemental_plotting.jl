@@ -179,7 +179,7 @@ function turnout_pl(;
   #   padding = (0, 0, 5, 0)
   # )
 
-  save(
+  CairoMakie.save(
     savepath * "turnout_pl" * ".png",
     tout_pl
   )
@@ -300,12 +300,12 @@ function rescheduled_pl(;
 
   end
 
-  save(
+  CairoMakie.save(
     savepath * "primary_diff_pl" * fext,
     pl_dm
   )
 
-  save(
+  CairoMakie.save(
     savepath * "primary_diff_case_pl" * fext,
     pl_cm
   )
@@ -436,7 +436,7 @@ function primary_mob_pl(;
 
   axr.attributes.xlabel = "Day"
 
-  save(
+  CairoMakie.save(
     savepath * "primary_mob_pl" * fext,
     primary_mobility
   )
@@ -593,7 +593,7 @@ function ga_mob_pl(
 
   axr.attributes.xlabel = "Day"
 
-  save(
+  CairoMakie.save(
     savepath * "ga_mob_pl" * fext,
     ga_mobility
   )
@@ -722,7 +722,7 @@ function rally_mob_pl(;
 
   colsize!(rally_mobility.layout, 2, Relative(9/10));
 
-  save(
+  CairoMakie.save(
     savepath * "rally_mob_pl" * fext,
     rally_mobility
   )  
@@ -852,7 +852,7 @@ function protest_mob_pl(;
 
   axr.attributes.xlabel = "Day"
 
-  save(
+  CairoMakie.save(
     savepath * "blm_mob_pl" * fext,
     blm_mobility
   )
@@ -957,7 +957,7 @@ function exposure_shift(;
   rowsize!(trump_shift.layout, 1, Relative(9/10));
   colsize!(trump_shift.layout, 1, Relative(1));
 
-  save(
+  CairoMakie.save(
     savepath * string(treatment) * "_shift_pl" * fext,
     trump_shift
   )
@@ -1038,7 +1038,7 @@ function protest_size_hists(
 
   vlines!(ax2, mean(pr1K), color = :red)
 
-  save(
+  CairoMakie.save(
     savepath * "blm_sz_pl" * fext,
     protest_sz
   )

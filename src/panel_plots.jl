@@ -258,7 +258,7 @@ function primary_panel(
   rowgap!(g4, 0.1)
 
   if dosave
-    save(
+    CairoMakie.save(
       spth * "primary_panel" * ext,
       Fig
     )
@@ -331,7 +331,7 @@ function blm_panel(
   Fig
 
   if dosave
-    save(
+    CairoMakie.save(
       spth * "protest_panel" * ext,
       Fig
     )
